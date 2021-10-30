@@ -88,6 +88,12 @@ client.connect((err) => {
   // get all volunteer
 });
 
+
+
+app.get('/',(req,res) => {
+  res.send('Heroku is working  perfectly')
+})
+
 app.listen(port, ()=> {
   console.log(`listening on port  5000`);
 });
