@@ -7,6 +7,8 @@ const ObjectId = require("mongodb").ObjectId;
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.texip.mongodb.net/volunteerNetwork?retryWrites=true&w=majority`;
 
+
+console.log(uri);
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -27,6 +29,10 @@ client.connect((err) => {
   const volunteerCollection = client
     .db("volunteerNetwork")
     .collection("volunteer");
+
+
+console.log("all routes should be working");
+
 
   // add Events
   app.post("/addEvent", async (req, res) => {
