@@ -20,9 +20,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 client.connect((err) => {
   const EventsCollection = client.db("volunteerNetwork").collection("events");
